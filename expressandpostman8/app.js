@@ -2,7 +2,30 @@
 const express = require("express"); // importing express
  // creating express initalized app
 const app = express();
+const port = 80;
+const path =require('path')
 
+//for serving static files
+app.use('/index', express.static('index'))
+
+
+//set the template engine as pug 
+app.set('view engine' ,'pug')
+
+//set the views directory 
+app.set('views',path.join(__dirname,"views"));
+
+//pug demo endpoint 
+
+
+app.get("/demo", (req,res)=>{
+   res.status(200).render('demo',{ title: 'hey' , message:'hello welcome to pug '});
+});
+
+
+app.get("/demo", (req,res)=>{
+   res.status(200).send("this is the first home page with pug");
+});
 
 // running arrow function which has req and res arguiments
 //geting request on the given endpont
@@ -23,7 +46,7 @@ app.post("/post",(req,res)=>{
 });
 //selecting port 
 //use nodemon
-const port = 80;
+
 app.listen(port,()=>{
     console.log(`this applicaton started sucessfully on ${port}`)
 })
