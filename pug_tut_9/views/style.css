@@ -2,3 +2,33 @@
     background-color: aqua;
     border:0lvh solid orange
 }
+body{
+    height: 50vh;
+    width: 50vw;
+    position: relative;
+    left: 25vh;
+    background-color: blue;
+
+}
+div{
+    position: relative;
+    top: 100vh;
+    background-color: orange;
+    height: 50vh;
+    width: 50vh;
+    left:30vh;
+    border: black  2% solid;
+    text-align: center;
+    
+}
+#new{
+    position: relative;
+    top: 200vh;
+    background-color: brown;
+    text-align: center;
+    height: 10vh;
+    width: 10vh;
+    border-style: solid;
+    border-color: lawngreen;
+    border: width 2px;;
+}
