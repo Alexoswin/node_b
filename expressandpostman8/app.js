@@ -2,7 +2,7 @@
 const express = require("express"); // importing express
  // creating express initalized app
 const app = express();
-const port = 80;
+const port = 3000;
 const path =require('path')
 
 //for serving static files

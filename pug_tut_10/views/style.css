@@ -1,0 +1,73 @@
+
+
+#box2{
+    height: 50vh;
+    width: 40vh;
+   
+   
+  
+  }
+  #box1 {
+   
+  
+    height:60vh;
+    width:40vh;
+    display: none;
+   
+  
+  }
+  div{
+    background-color: rgb(8, 12, 56);
+    position: absolute;
+    left:40vw;
+    top:20vh;
+    text-align: center;
+  
+  }
+  input{
+  
+    margin-top:4vh;
+    width: 80%;
+    height:3vh;
+    font-size: 1.5vh;
+  }
+  
+  body{
+      
+      width: 100wh;
+      background-image: url(https://cdn.mos.cms.futurecdn.net/qn4ZFbAyQFgJMgNir8X8Ym-1200-80.jpg);
+      background-size:cover;
+   
+  }
+   
+  button{
+    background-color: #ff9100;
+    height: 4vh;
+    width: 8vh;
+    margin-top: 5vh;
+    font-size: 1.5vh;
+  }
+  
+  
+  p{
+    color: white;
+    font-size: 2.5vh
+  }
+  form{
+    background-color: rgb(8, 12, 56);
+  }
+  
+  
+  #box1::before, #box2::before {
+    content: "";
+    position: absolute;
+    top: -2%;
+    left: -2%;
+    right: -2%;
+    bottom: -2%;
+   
+    animation: neonLightAnimation 5s linear infinite;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+    background-size: 400% 100%;
+    z-index: -1;
+  }

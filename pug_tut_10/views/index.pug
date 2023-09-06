@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        style 
+            include style.css
+
+    </head>
+    <body>
+        <div id="box1">
+            <p> Sign-up</p>
+            <form name="form1">
+                <input id="username" name="username" type="text" placeholder="username">
+                <br/>
+                <input id="email" name="email" type="email" placeholder="email-id"><br/>
+                <input id="password" name="password" type="password" placeholder="password"><br/>
+                <input id="password2" name="password2" type="password" placeholder="re enter password"><br/>
+                <button id="submit1" onclick="validatesign()">submit</button>
+                <button id="log-in" onclick="replaceit()">log-in</button>
+            </form>
+            
+
+        </div>
+        <div id="box2">
+            <p> Log-in</p>
+
+            <form name="form2">
+                <input id="username2" name="username2" type="text" placeholder="username"><br/>
+                <input id="password3" name="password3" type="password" placeholder="password"><br/>
+            </form>
+            <button onclick="validatelog()" id="submit2"> submit</button>
+            <button onclick="replaceit()" id="signup">signup</button>
+        </div>
+        
+    </body>
+</html>
