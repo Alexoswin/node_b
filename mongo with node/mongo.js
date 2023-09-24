@@ -1,28 +1,32 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/employee', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+const mongoose = require("mongoose");
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, "connection error:"));
+// Define an async function for your main logic
+async function main() {
+  try {
+    await mongoose.connect('mongodb://127.0.0.1:27017/employee');
 
-db.once('open', function () {
-  console.log("we are connected");
+    // Define your schema and model
+    const kittySchema = new mongoose.Schema({
+      name: String
+    });
 
-  // Now that the database connection is open, you can define and save your student details.
-  let studentSchema = new mongoose.Schema({
-    name: String
-  });
+    const Kitten = mongoose.model('Kitten', kittySchema);
 
-  let student = mongoose.model("student", studentSchema);
+    // Create a new kitten document
+    const fluffy = new Kitten({ name: 'Fluffy' });
 
-  let details = new student({
-    name: "Alex"
-  });
+    // Save the document to the database
+    await fluffy.save();
+    
+    console.log('Kitten saved successfully.');
+  } catch (err) {
+    console.error('Error:', err);
+  } finally {
+    // Close the Mongoose connection when you're done
+    mongoose.connection.close();
+  }
+}
 
-  details.save(function (err, savedStudent) {
-    if (err) return console.error(err);
-    console.log("Student saved successfully:", savedStudent);
-  });
-});
+main().catch(err => console.log(err));
+
+
